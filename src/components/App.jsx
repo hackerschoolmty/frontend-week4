@@ -5,20 +5,16 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<div className="row">
-	        <div className="col s12">
-	          <div className="card blue-grey darken-1">
-							<div className="card-content white-text center-align">
-	              <span className="card-title">React Chat</span>
-	              <p>Ejemplo basico de React simulando un chat</p>
-	            </div>
-	            <div className="card-action">
-								<a className="waves-effect waves-light btn">Generar Nuevo Chat</a>
-								<a className="waves-effect waves-light btn">Enviar Mensaje Chat</a>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
+				<nav>
+				  <div className="nav-wrapper red darken-1">
+				    <a className="brand-logo right">React Chat</a>
+				    <ul id="nav-mobile" className="left hide-on-med-and-down">
+				      <li><a>Generar Nuevo Chat</a></li>
+				      <li><a>Enviar Mensaje Chat</a></li>
+							<li><a>Mensajes sin leer<span className="new badge">1</span></a></li>
+				    </ul>
+				  </div>
+				</nav>
 				<div className="row">
 		      <div className="col s12 m4 l3">
 						<div className="card orange darken-4">
@@ -27,7 +23,7 @@ class App extends React.Component {
 	            </div>
 							<div className="collection">
 				        <a className="collection-item">User 1</a>
-				        <a className="collection-item">User 2</a>
+				        <a className="collection-item">User 2<span className="new badge">1</span></a>
 				      </div>
 	          </div>
 		      </div>
@@ -40,13 +36,13 @@ class App extends React.Component {
 								<div className="card-content left-align">
 									<div className="chip">
 								    <b>User 1: </b>
-										<text>Chatting...</text>
+										<text>hey</text>
 								  </div>
 		            </div>
 								<div className="card-content right-align">
 									<div className="chip">
 								    <b>You: </b>
-										<text>Chatting...</text>
+										<text>hola</text>
 								  </div>
 		            </div>
 								<div className="card-action">
