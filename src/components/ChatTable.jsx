@@ -6,21 +6,31 @@ class ChatTable extends React.Component {
       <div className="col s12 m8 l9">
         <div className="card hoverable indigo darken-4">
           <div className="card-content white-text left-align">
-            <span className="card-title">User 1 Chat</span>
+            <span className="card-title">{`${this.props.userName}'s Chat`}</span>
           </div>
           <div className="card">
-            <div className="card-content left-align">
-              <div className="chip">
-                <b>User 1: </b>
-                <text>hey</text>
-              </div>
-            </div>
-            <div className="card-content right-align">
-              <div className="chip">
-                <b>You: </b>
-                <text>hola</text>
-              </div>
-            </div>
+            {
+              this.props.messageList.map((msg) => {
+                if (msg.userName === 'You') {
+                  return (
+                    <div className="card-content right-align">
+                      <div className="chip">
+                        <b>{msg.userName}: </b>
+                        <text>{msg.message}</text>
+                      </div>
+                    </div>
+                  )
+                }
+                return (
+                  <div className="card-content left-align">
+                    <div className="chip">
+                      <b>{msg.userName}: </b>
+                      <text>{msg.message}</text>
+                    </div>
+                  </div>
+                )
+              })
+            }
             <div className="card-action">
               <div className="row">
                 <form className="col s12">
@@ -38,6 +48,11 @@ class ChatTable extends React.Component {
       </div>
 		);
 	}
+}
+
+ChatTable.propTypes = {
+  userName: React.PropTypes.string.isRequired,
+  messageList: React.PropTypes.array.isRequired
 }
 
 export default ChatTable;

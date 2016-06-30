@@ -9,13 +9,20 @@ class SideChat extends React.Component {
             <span className="card-title">Chats</span>
           </div>
           <div className="collection">
-            <a className="collection-item">User 1</a>
-            <a className="collection-item">User 2<span className="new badge">1</span></a>
+            {
+              this.props.userList.map((user) => {
+                return <a className="collection-item">{user}</a>
+              })
+            }
           </div>
         </div>
       </div>
 		);
 	}
+}
+
+SideChat.propTypes = {
+  userList: React.PropTypes.array.isRequired
 }
 
 export default SideChat;

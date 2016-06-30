@@ -15,7 +15,7 @@ export function generateNewChat() {
 }
 
 
-export function generateNewMessage(userName) {
+export function generateResponse(userName) {
   const message = randomstring.generate();
   const chatMessage = {
     userName: userName,
