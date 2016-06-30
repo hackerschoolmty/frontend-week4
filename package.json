@@ -18,6 +18,7 @@
   "homepage": "https://github.com/hackerschoolmty/frontend-week4#readme",
   "dependencies": {
     "json5": "^0.5.0",
+    "randomstring": "^1.1.5",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
