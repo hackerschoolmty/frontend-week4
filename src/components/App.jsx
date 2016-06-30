@@ -6,6 +6,7 @@ import {
 import NavBar from './NavBar';
 import ChatTable from './ChatTable';
 import SideChat from './SideChat';
+import shortId from 'shortId';
 
 const initialState = {
 	userList: ['user_1', 'user_2'],
@@ -31,6 +32,11 @@ class App extends React.Component {
 		this.state = initialState;
 		this.createUser = this.createUser.bind(this);
 		this.createResponse = this.createResponse.bind(this);
+		this.changeTitle = this.changeTitle.bind(this);
+	}
+
+	changeTitle() {
+		this.setState({appTitle: shortId.generate()})
 	}
 
 	createUser() {
@@ -56,6 +62,7 @@ class App extends React.Component {
 				<NavBar
 					appTitle={this.state.appTitle}
 					generateNewUser={this.createUser}
+					changeTitle={this.changeTitle}
 					generateResponse={this.createResponse}
 				/>
 				<div className="row">

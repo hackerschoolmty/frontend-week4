@@ -2,6 +2,7 @@ import React from 'react';
 
 class ChatTable extends React.Component {
 	render() {
+		console.log('ChatTable rendering');
 		return (
       <div className="col s12 m8 l9">
         <div className="card hoverable indigo darken-4">

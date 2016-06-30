@@ -2,6 +2,7 @@ import React from 'react';
 
 class SideChat extends React.Component {
 	render() {
+		console.log('SideChat rendering');
 		return (
       <div className="col s12 m4 l3">
         <div className="card orange darken-4">
